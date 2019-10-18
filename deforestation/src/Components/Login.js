@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/App.css";
-import { Wrapper } from "../Styles/style";
+import { Wrapper, FormWrapper } from "../Styles/style";
 
 function Login() {
   //Creating a intial state object that handles the various states needed
@@ -21,8 +21,7 @@ function Login() {
   };
   return (
     <Wrapper>
-      <div>
-        <form>
+        <FormWrapper>
           <h1>Log In</h1>
           <input
             placeholder="User Name"
@@ -40,10 +39,8 @@ function Login() {
             name="password"
             id="password"
           />
-
           <button>Register</button>
-        </form>
-      </div>
+        </FormWrapper>
     </Wrapper>
   );
 }

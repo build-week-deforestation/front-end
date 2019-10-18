@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/App.css";
-import { Wrapper } from "../Styles/style";
+import { Wrapper, FormWrapper } from "../Styles/style";
 
 function Register() {
   //Creating a intial state object that handles the various states needed
@@ -21,8 +21,7 @@ function Register() {
   };
   return (
     <Wrapper>
-      <div>
-        <form>
+        <FormWrapper>
           <h1>Register</h1>
           <input
             placeholder="User Name"
@@ -42,8 +41,7 @@ function Register() {
           />
 
           <button>Register</button>
-        </form>
-      </div>
+        </FormWrapper>
     </Wrapper>
   );
 }

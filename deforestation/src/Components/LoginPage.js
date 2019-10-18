@@ -7,7 +7,7 @@ import Login from "./Login";
 function LoginPage() {
   return (
     <Wrapper>
-      <h2>This is the Login Page!</h2>
+      <h1>This is the Login Page!</h1>
       <Register/>
       <Login/>
     </Wrapper>
