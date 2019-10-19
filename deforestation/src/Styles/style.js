@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ForestBackground from "../Assets/ForestBackground.jpg";
+import ForestBackground from "../components/Images/ForestBackground.jpg";
 
 export const Wrapper = styled.div`
   display: flex;

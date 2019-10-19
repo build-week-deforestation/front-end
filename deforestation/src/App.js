@@ -1,9 +1,10 @@
 import React from "react";
-import "./Styles/App.css";
-import Home from "./Components/Home";
-import LoginPage from "./Components/LoginPage";
-import { AppWrapper, Wrapper } from "./Styles/style";
-import { AuthContext } from "./Contexts/AuthContexts";
+import "./styles/App.css";
+import DataPage from "./components/DataPage";
+import Home from "./components/Home";
+import { BrowserRouter } from "react-router-dom";
+import { AppWrapper, Wrapper } from "./styles/style";
+import { AuthContext } from "./contexts/AuthContexts";
 
 //Setting up state for authentication
 const initialState = {
@@ -41,20 +42,22 @@ function App() {
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
   return (
-    <AuthContext.Provider
-      value={{
-        state,
-        dispatch
-      }}
-    >
-      <AppWrapper>
-        <Wrapper>
-          <div className="App">
-            {!state.isAuthenticated ? <LoginPage /> : <Home />}
-          </div>
-        </Wrapper>
-      </AppWrapper>
-    </AuthContext.Provider>
+    <BrowserRouter>
+      <AuthContext.Provider
+        value={{
+          state,
+          dispatch
+        }}
+      >
+        <AppWrapper>
+          <Wrapper>
+            <div className="App">
+              {!state.isAuthenticated ? <Home /> : <DataPage />}
+            </div>
+          </Wrapper>
+        </AppWrapper>
+      </AuthContext.Provider>
+    </BrowserRouter>
   );
 }
 
