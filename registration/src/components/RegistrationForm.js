@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Axios from "axios";
 
 
 // //body color: #e8ecf1,
@@ -9,27 +10,26 @@ import styled from "styled-components";
 //   Accent 3: #2c82c9
 
 const FormDiv = styled.div`
-
-display: flex;
-flex-direction: column;
-justify-content-space-between;
+    display: flex;
+    border: none;
+    overflow: visible;
 
 
     form {
-
         display: flex;
-        flex-flow: column;  
-        align-items: center;
-        justify-content-space-between;
+        flex-direction: column;  
+        align-items: flex-start;
+
         
         button {
 
             margin-top: 5%;
-            max-width: 80%;
             background-color: #3d7c47;
             border: none;
             padding: 6% 9%;
             color: #f0f8ff;
+            border-radius: 2px;
+            display: block;
 
             &:hover {
               
@@ -40,27 +40,62 @@ justify-content-space-between;
     }
 `;
 
-const FormRows = styled.div`
-
+const FormRows = styled.fieldset`
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content-space-between;
-    max-width: 100px;
+    align-self: flex-start;
+    min-width: 80%;
+    padding: 1.5%;
+    border: none;
 
     label {
+        margin-right: 100%;
         white-space: nowrap;
         font-size: 18px;
-        letter-spacing: 1px;
         margin-top: 2%;
+        font-weight: 300;
+
+        p {
+
+            font-size: .75em;
+        }
     }
 
     input {
-        max-width: 150px;
-        margin-top: 2%;
-        border-radius: 4px;
+        box-sizing: border-box;
+        min-width: 150px;
+        padding: 8px 10px 8px;
         border: none;
+        border-radius: 4px;
+        box-shadow: none;
+        border-bottom: 1px solid #DDD;
+        margin-top: 5.5%;
+        border: 1px solid #ccc;
+        font-size: 120%;
+        outline: none;
+        cursor: text;
+        
+
+    }
+
+    select {
+
+        box-sizing: border-box;
+        border: none;
+        border-radius: 4px;
+        box-shadow: none;
+        overflow-y: scroll;
+        font-size: 120%;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        margin: 0 auto;
+       
+        
+
+        option {
+            
+            border: 1px solid lightgrey;
+            padding: 8px 10px 8px;
+            min-width: 100%;        
+        }
     }
 
     ul {
@@ -89,6 +124,7 @@ const FormRows = styled.div`
 
 `;
 
+
 function handleSubmit (e) {
 
 }
@@ -97,13 +133,34 @@ function handleSubmit (e) {
 
 function RegistrationForm (props) {
 
+
+
     const [regionArry, setRegionArray] = useState(false)
     const [input, setInput] = useState("");
+    
+    useEffect(() => {
+
+        const fetchRegionNames = () => {
+            Axios.get("bleh").then(response => {
+                setRegionArray(response);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+        }
+
+        fetchRegionNames();
+    }, []);
+
+
+   
 
     function handleChange (e) {
 
         setInput(e.target.value);
-        
+        //setDisplayState("block");
+
         let filterArr = props.arr.filter(place => {
             return place.includes(e.target.value);
           }); 
@@ -124,47 +181,61 @@ function RegistrationForm (props) {
             <form onSubmit={event => handleSubmit()}>
 
                 <FormRows>
-                    <label htmlFor="username">Username</label>
+                    
                         <input id ="username" 
                         type="text" 
                         name="username"
+                        placeholder="username"
                         /> 
-                    <label htmlFor="password">Password</label>
+                    
                         <input id ="password"  
                         type="password" 
                         name="password"
+                        placeholder="password"
                         /> 
                 </FormRows>
                 <FormRows>
-                    <label htmlFor="First-Name">First Name:</label>
+                    
                         <input id ="First-Name"  
                         type="text" 
                         name="First-Name"
+                        placeholder="First Name"
                         />
-                    <label htmlFor="Last-Name">Last Name:</label>
+                    
                         <input id ="Last-Name"  
                         type="text" 
                         name="Last-Name"
+                        placeholder="Last Name"
                         />
                 </FormRows>
                 <FormRows>
-                    <label htmlFor="Date">Date of Interest:</label>
-                        <input id ="Date"  
-                        type="date" 
-                        name="Date"
+                    <label htmlFor="Date-of-Interest">Date of Interest: <p>Choose a year between 1990 and 2005</p></label>
+                    <input id ="Date-of-Interest"  
+                        type="text" 
+                        name="Date-of-Interest"
+                        
                         />
                     <label htmlFor="Region-Of-Interest">Region of Interest:</label>
                         <input id ="Region-Of-Interest"  
                         type="text" 
                         name="Region-Of-Interest"
+                        autocomplete="off"
                         value={input}
-                        onChange={event => handleChange(event)}/>
+                        onClick={event => event.preventDefault()}
+                        onChange={event => handleChange(event)}
+                        />
                         <ul>
                         {regionArry.length > 0 && regionArry.map(place => (
                         <li key={place}>
-                            <a onClick={e =>
-                             {console.log({place}.place);
+                            <a 
+                            
+                            onClick={e =>
+                             
+                             {
+                             console.log({place}.place);
                               setInput({place}.place);
+                              setRegionArray(false);
+
                             }}>{place}</a></li>
                         ))}
                         </ul>

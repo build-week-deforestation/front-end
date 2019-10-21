@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import Registration from './components/registration';
+import UserPage from "./components/UserPage";
 import './App.css';
 
 // //body color: #e8ecf1,
@@ -14,7 +15,7 @@ import './App.css';
  const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100vw;
   height: 100vh;
@@ -30,6 +31,7 @@ function App() {
       <Wrapper>
 
         <Route exact path="/" component={Registration}></Route>
+        <Route path="/user-page" component={UserPage}></Route>
       </Wrapper>
       
     </div>

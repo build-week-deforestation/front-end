@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import RegistrationForm from "./RegistrationForm";
 
+
 // //body color: #e8ecf1,
 //  Primary color:  #03bd37,
 //   Accent 1: #f0f8ff,
@@ -37,18 +38,21 @@ const RegistrationCard = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     background-color: #f0f8ff;
     color: #2c82c9;
     padding: 1.5%;
-    height: 80%;
+    height: 85%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+    @media (max-width: 375px) {
+
+        height: 95%;
+    }
 `;
 
 const LinkText = styled.p`
-
     text-decoration: none;
-    
     font-size: 50%;
     position: absolute; 
     top: 85%;
@@ -57,6 +61,8 @@ const LinkText = styled.p`
 `;
 
 const RegistrationHeading = styled.h2`
+    font-weight: 300;
+    font-size: 1.6em;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #000000;
