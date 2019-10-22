@@ -18,7 +18,8 @@ align-items: flex-start;
 flex-direction row;
 background-color: #3d7c47;
 padding: 1.5%;
-height: 10%;
+
+padding-bottom: 15%;
 box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 `;
 
@@ -29,9 +30,9 @@ const LogoImage = styled.img`
 
 const RegistrationContainer = styled.div `
     width: 20em;
-    height: 45em;
     margin-left: 3%;
     margin-right: 3%;
+    
 `;
 
 const RegistrationCard = styled.section`
@@ -42,7 +43,8 @@ const RegistrationCard = styled.section`
     background-color: #f0f8ff;
     color: #2c82c9;
     padding: 1.5%;
-    height: 85%;
+    
+    margin-bottom: 5%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
     @media (max-width: 375px) {
@@ -51,14 +53,7 @@ const RegistrationCard = styled.section`
     }
 `;
 
-const LinkText = styled.p`
-    text-decoration: none;
-    font-size: 50%;
-    position: absolute; 
-    top: 85%;
-    right:  10%;
-    margin: 2%;
-`;
+
 
 const RegistrationHeading = styled.h2`
     font-weight: 300;
@@ -89,15 +84,8 @@ function Registration (props) {
             <RegistrationHeading>Discover More</RegistrationHeading>
                
                 <RegistrationForm arr={["albania", "romania", "lithuania", "United States"]}/>
-            </RegistrationCard> 
-            
-            <Link to="/sign-up">
-                <LinkText >Already A User? Click Here.</LinkText>
-            </Link>
-            <Link to="/main-page">
-                <LinkText>Continue to Data Set</LinkText>
-            </Link>
-            
+               
+            </RegistrationCard>             
         </RegistrationContainer>           
         
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Axios from "axios";
 
@@ -13,24 +14,58 @@ const FormDiv = styled.div`
     display: flex;
     border: none;
     overflow: visible;
+    width: 100%;
 
 
     form {
         display: flex;
         flex-direction: column;  
         align-items: flex-start;
-
+        max-width: 100%;
         
+
+        .button-link-div {
+
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.5%;
+
+            .link-div {
+                
+                display: flex;
+                flex-flow: column;
+                justify-content: space-around;
+
+                a:first-child {
+                   
+                    p {
+
+                    margin-top: 10%;
+                    
+                    margin-bottom: 10%;
+                    }
+                }
+
+                a{
+
+                    text-decoration: none;
+                    
+                }
+            }
+        }
+
         button {
 
             margin-top: 5%;
             background-color: #3d7c47;
+            width: 50%;
             border: none;
             padding: 6% 9%;
             color: #f0f8ff;
             border-radius: 2px;
             display: block;
-
+            margin-bottom: 2%;
             &:hover {
               
                 background-color: #f0f8ff;
@@ -44,8 +79,10 @@ const FormRows = styled.fieldset`
     display: flex;
     align-self: flex-start;
     min-width: 80%;
+    width: 100%;
     padding: 1.5%;
     border: none;
+    flex-flow: column;
 
     label {
         margin-right: 100%;
@@ -98,30 +135,58 @@ const FormRows = styled.fieldset`
         }
     }
 
+    .list-div {
+
+        position: relative;
+    }
+
     ul {
 
         
         background-color: white;
         margin-top -.3%;
-        min-width: 143px;
+        ;
+        min-width: 90%;
         padding: 0;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        position: absolute;
         
 
         li {
 
             border: 1px solid lightgrey;
             list-style-type: none;
-            min-width: 100%;
+            max-width: 100%;
             text-align: left;
             color: black;
             padding: 1% 0 1% 4%;
+            text-align: center;
+
+            a {
+
+                min-width: 100%;
+                padding: 0 20%;
+                text-align: center;
+            }
+
+            &:hover {
+
+                color: white;
+                background: lightgrey;
+            }
 
         }
     }
     
     
 
+`;
+
+const LinkText = styled.p`
+    text-decoration: none;
+    font-size: 50%;
+    
+    margin: 2%;
 `;
 
 
@@ -224,23 +289,36 @@ function RegistrationForm (props) {
                         onClick={event => event.preventDefault()}
                         onChange={event => handleChange(event)}
                         />
-                        <ul>
-                        {regionArry.length > 0 && regionArry.map(place => (
-                        <li key={place}>
-                            <a 
-                            
-                            onClick={e =>
-                             
-                             {
-                             console.log({place}.place);
-                              setInput({place}.place);
-                              setRegionArray(false);
+                        <div className="list-div">
+                            <ul>
+                            {regionArry.length > 0 && regionArry.map(place => (
+                            <li key={place}>
+                                <a 
+                                
+                                onClick={e =>
+                                
+                                {
+                                console.log({place}.place);
+                                setInput({place}.place);
+                                setRegionArray(false);
 
-                            }}>{place}</a></li>
-                        ))}
-                        </ul>
+                                }}>{place}</a></li>
+                            ))}
+                            </ul>
+                        </div>
                 </FormRows>
-                <button type="submit">Register</button>
+
+                <div className="button-link-div">
+                    <button type="submit">Register</button>
+                    <div className="link-div">
+                        <Link to="/login">
+                            <LinkText >Already A User? Click Here.</LinkText>
+                        </Link>
+                        <Link to="/dashboard">
+                            <LinkText>Continue to Data Set</LinkText>
+                        </Link>
+                    </div>
+                </div>
             </form>
         </FormDiv>           
         
