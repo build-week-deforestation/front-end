@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import RegistrationForm from "./RegistrationForm";
 
+import RegistrationForm from "./RegistrationForm";
+import Login from "./Login";
 
 // //body color: #e8ecf1,
 //  Primary color:  #03bd37,
@@ -29,9 +30,9 @@ const LogoImage = styled.img`
 `;
 
 const RegistrationContainer = styled.div `
-    width: 20em;
-    margin-left: 3%;
-    margin-right: 3%;
+    width: 100%;
+    margin: 0 auto; 
+    width: 100%;
     
 `;
 
@@ -69,7 +70,7 @@ const RegistrationHeading = styled.h2`
 
 function Registration (props) {
 
-    
+  
     return(
         
         <RegistrationContainer>
@@ -85,7 +86,10 @@ function Registration (props) {
                
                 <RegistrationForm arr={["albania", "romania", "lithuania", "United States"]}/>
                
-            </RegistrationCard>             
+            </RegistrationCard>
+            
+            
+
         </RegistrationContainer>           
         
 

@@ -1,7 +1,5 @@
 .App {
-  text-align: center;
-  min-height: 100vh;
-  width: 100vw;
+
 }
 
 .App-logo {
@@ -21,4 +19,47 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.modal-content {
+
+  min-width: 100%;
+  min-height: 100vh;
+  bottom: 0%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+
+  display: flex;
+  justify-content: space-between;
+  background: green;
+  padding-top: 2%;
+  background-color: #3d7c47;
+  margin: 50% auto 0 auto;;
+  max-width: 66%;
+}
+
+.modal-body {
+
+  max-width: 66%;
+  margin: 0 auto
+}
+
+.modal-header h5 {
+
+  margin: 0 0 0 2%;
+  color: white;
+}
+
+.modal-header button {
+
+  margin-right: 2%;
+  margin-bottom: 2%;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 100%;
+  
 }

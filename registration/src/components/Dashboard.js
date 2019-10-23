@@ -1,17 +1,29 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import TeamMate from "./TeamMate";
+import { Link } from "react-router-dom";
 
 const DashboardMain = styled.div`
 
-    width: 95vw;
+    width: 100%;
     background-color: #f0f8ff;
-    
+    height: 100%;
 
     header {
 
         background-color: #3d7c47;
-        padding-bottom: 15%;
+        padding-bottom: 5%;
+        display: flex;
+        justify-content: space-around;
+        align-items; center;
+
+        a {
+
+           margin-top: 5%;
+           text-decoration: none;
+           color: white;
+           padding: 4% 3%;
+        }
     }
 `;
 
@@ -27,7 +39,8 @@ function Dashboard () {
         <DashboardMain>
 
             <header>
-
+                <Link to="/user-page">Your Profile</Link>
+                <Link to="/">Sign Out</Link>
             </header>
             <div className="cloropleth-div">
                 <h2>Deforestation Map</h2>

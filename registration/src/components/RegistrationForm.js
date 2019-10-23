@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Axios from "axios";
+import { Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
+import Login from "./Login";
 
 
 // //body color: #e8ecf1,
@@ -16,6 +18,12 @@ const FormDiv = styled.div`
     overflow: visible;
     width: 100%;
 
+    .modal-content {
+
+        postion: absolute;
+        top: 0;
+        max-width: 80%;
+    }
 
     form {
         display: flex;
@@ -199,7 +207,7 @@ function handleSubmit (e) {
 function RegistrationForm (props) {
 
 
-
+    const [modal, setModal] = useState(false);
     const [regionArry, setRegionArray] = useState(false)
     const [input, setInput] = useState("");
     
@@ -219,7 +227,15 @@ function RegistrationForm (props) {
     }, []);
 
 
-   
+    const toggle = () => {
+        setModal(!modal);
+        if (modal){
+            document.body.style.overflow = "hidden";
+        }
+        else{
+            document.body.style.overflow = "auto";
+        }
+    };
 
     function handleChange (e) {
 
@@ -242,7 +258,18 @@ function RegistrationForm (props) {
     
     return(
         
+       <section>
+        <div class="modal">
+            <Modal isOpen={modal} onClick={toggle}>
+                <ModalHeader toggle={toggle}>Enter Login Info</ModalHeader>
+                <ModalBody>
+                    <Login />
+                </ModalBody> 
+                <ModalFooter></ModalFooter>
+            </Modal>
+        </div>
         <FormDiv>
+
             <form onSubmit={event => handleSubmit()}>
 
                 <FormRows>
@@ -311,16 +338,18 @@ function RegistrationForm (props) {
                 <div className="button-link-div">
                     <button type="submit">Register</button>
                     <div className="link-div">
-                        <Link to="/login">
-                            <LinkText >Already A User? Click Here.</LinkText>
-                        </Link>
+                        
+                        <LinkText onClick={() => toggle()}>Already A User? Click Here.</LinkText>
+                        
                         <Link to="/dashboard">
                             <LinkText>Continue to Data Set</LinkText>
                         </Link>
                     </div>
+                    
                 </div>
             </form>
-        </FormDiv>           
+        </FormDiv> 
+        </section>           
         
 
     );

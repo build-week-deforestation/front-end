@@ -15,14 +15,7 @@ import './App.css';
 
 
  const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100vw;
-  min-height: 100vh;
-  
-  background-color: #e8ecf1;
+
   font-family: 'Roboto Mono', monospace;
  `;
 

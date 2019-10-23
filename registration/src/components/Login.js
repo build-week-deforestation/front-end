@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-
+import { Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
 const MainLogin = styled.div`
 
 
-width: 100vw;
 
-background:  #3d7c47;
 
 input {
     box-sizing: border-box;
@@ -31,9 +29,9 @@ form {
     align-items: flex-start;
     background: #f0f8ff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    padding: 20% 0;
-    width: 80%;
-    margin: 25vh auto 34vh auto;
+    padding: 5% 0;
+    
+    
     
     h2 {
 
@@ -65,30 +63,36 @@ form {
 
 function Login () {
 
+    
+
     const handleSubmit = () => {
 
 
     }
 
-    return(
-        <MainLogin>
+    
 
-            <form onSubmit={event => handleSubmit()}>
-                <h2>Enter Your Login Info</h2>
-                <input id ="username" 
-                type="text" 
-                name="username"
-                placeholder="username"
-                /> 
-                    
-                <input id ="password"  
-                type="password" 
-                name="password"
-                placeholder="password"
-                />
-                <button type="submit">Login</button>
-            </form>
-        </MainLogin>
+    return(
+
+        
+            <MainLogin>
+
+                <form onSubmit={event => handleSubmit()}>
+                    <input id ="username" 
+                    type="text" 
+                    name="username"
+                    placeholder="username"
+                    /> 
+                        
+                    <input id ="password"  
+                    type="password" 
+                    name="password"
+                    placeholder="password"
+                    />
+                    <button type="submit">Login</button>
+                </form>
+            </MainLogin>
+        
     );
 }
 
