@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Axios from "axios";
 import { Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
 import Login from "./Login";
-import { FormDivStyles, FormRowStyles, LinkTextStyles} from "../Styled-Components/RegistrationForm";
+import { FormDivStyles, FormRowStyles, LinkTextStyles} from "../Styles/RegistrationForm";
 
 
 // //body color: #e8ecf1,
@@ -59,17 +59,27 @@ function RegistrationForm (props) {
 
         setInput(e.target.value);
         //setDisplayState("block");
+        let filterArr = [];
+        let tracker = e.target.value.length - 1;
+        
+        console.log(tracker);
 
-        let filterArr = props.arr.filter(place => {
-            return place.includes(e.target.value);
-          }); 
-      
-          if(e.target.value === ""){
-              setRegionArray(false);
-          }
-          else {
-              setRegionArray(filterArr);
-          }
+        filterArr = props.arr.filter(place => {
+            return place.charAt(tracker).toLowerCase().includes(e.target.value.charAt(tracker).toLowerCase());
+        });
+
+        filterArr = filterArr.filter(place => {
+            return place.charAt(0).toLowerCase().includes(e.target.value.charAt(0).toLowerCase());
+        });
+
+       
+            if(e.target.value === ""){
+                setRegionArray(false);
+            }
+            else {
+                setRegionArray(filterArr);
+            }
+        
     }
 
 
@@ -136,7 +146,7 @@ function RegistrationForm (props) {
                         />
                         <div className="list-div">
                             <ul>
-                            {regionArry.length > 0 && regionArry.map(place => (
+                            {regionArry && regionArry.map(place => (
                             <li key={place}>
                                 <a 
                                 

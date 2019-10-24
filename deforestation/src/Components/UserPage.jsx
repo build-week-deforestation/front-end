@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
 import Axios from "axios";
 import { Link } from "react-router-dom";
-import { UserPageStyles } from '../Styled-Components/UserPage';
+import { UserPageStyles } from '../Styles/UserPage';
 
 const UserCard = styled.div`${UserPageStyles}`;
 
@@ -17,7 +17,7 @@ function UserPage (props) {
     const [input, setInput] = useState("");
 
     const tempArr = ["albania",
-    "romania", "lithuania", "United States"];
+    "romania", "lithuania", "United States", "A", "a", "a", "A"];
 
     useEffect(() => {
         const fetchUserData = () =>
@@ -39,19 +39,29 @@ function UserPage (props) {
 
     function handleChange (e) {
 
+      
         setInput(e.target.value);
         //setDisplayState("block");
+        let filterArr = [];
+        let tracker = e.target.value.length - 1;
+        
+        console.log(tracker);
 
-        let filterArr = tempArr.filter(place => {
-            return place.includes(e.target.value);
-          }); 
-      
-          if(e.target.value === ""){
-              setRegionArray(false);
-          }
-          else {
-              setRegionArray(filterArr);
-          }
+        filterArr = tempArr.filter(place => {
+            return place.charAt(tracker).toLowerCase().includes(e.target.value.charAt(tracker).toLowerCase());
+        });
+
+        filterArr = filterArr.filter(place => {
+            return place.charAt(0).toLowerCase().includes(e.target.value.charAt(0).toLowerCase());
+        });
+
+       
+            if(e.target.value === ""){
+                setRegionArray(false);
+            }
+            else {
+                setRegionArray(filterArr);
+            }
     }
 
     return (
@@ -76,6 +86,7 @@ function UserPage (props) {
                             />
                     <label htmlFor="Region-Of-Interest">Region of Interest:</label>
                         <input id ="Region-Of-Interest"  
+                            className="region"
                             type="text" 
                             name="Region-Of-Interest"
                             autocomplete="off"
@@ -83,21 +94,23 @@ function UserPage (props) {
                             onClick={event => event.preventDefault()}
                             onChange={event => handleChange(event)}
                             />
-                            <ul>
-                            {regionArry.length > 0 && regionArry.map(place => (
-                            <li key={place}>
-                                <a 
-                                
-                                onClick={e =>
-                                
-                                {
-                                console.log({place}.place);
-                                setInput({place}.place);
-                                setRegionArray(false);
+                            <div className="list-div">
+                                <ul>
+                                {regionArry.length > 0 && regionArry.map(place => (
+                                <li key={place}>
+                                    <a 
+                                    
+                                    onClick={e =>
+                                    
+                                    {
+                                    console.log({place}.place);
+                                    setInput({place}.place);
+                                    setRegionArray(false);
 
-                                }}>{place}</a></li>
-                            ))}
-                            </ul>
+                                    }}>{place}</a></li>
+                                ))}
+                                </ul>
+                            </div>
                      <button type="submit">Update</button>
                 </form>
             </div>

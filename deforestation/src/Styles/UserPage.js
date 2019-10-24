@@ -73,6 +73,15 @@ export const UserPageStyles = css`
             cursor: text;
         }
 
+        form {
+
+            
+            .region {
+
+                margin-bottom: 0;
+            }
+        }
+
         
         button {
 
@@ -97,25 +106,53 @@ export const UserPageStyles = css`
             flex-flow: column;
             align-items: center;
 
-            ul {
+            .list-div {
 
+                position: relative;
+                min-height: 10vh;
+                min-width: 100vw;
+
+                ul {
+
+                    margin-top: -.5%;
+                    background-color: white;
+                    margin: 0 auto;
+                    min-width: 60vw;
+                    padding: 0;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+                    position: absolute;
+                    list-style-position: inside;
+                    overflow: scroll;
+                    max-height: 15vh;
+                   
+                    left: 20%;
+                    
+            
+                    li {
+            
+                        border: 1px solid lightgrey;
+                        list-style-type: none;
+                        max-width: 100%;
+                        text-align: left;
+                        color: black;
+                        padding: 1% 0 1% 4%;
+                        text-align: center;
         
-                background-color: white;
-                margin-top -3%;
-                min-width: 143px;
-                padding: 0;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-                
+                        a {
         
-                li {
+                            min-width: 100%;
+                            padding: 0 20%;
+                            text-align: center;
+                        }
         
-                    border: 1px solid lightgrey;
-                    list-style-type: none;
-                    min-width: 100%;
-                    text-align: left;
-                    color: black;
-                    padding: 1% 0 1% 4%;
+                        &:hover {
         
+                            color: white;
+                            background: lightgrey;
+                        }
+        
+            
+                    }
                 }
             }
         }

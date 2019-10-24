@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { RegistrationStylesMain, RegistrationStylesCard } from "../Styled-Components/Registration";
+import { RegistrationStylesMain, RegistrationStylesCard } from "../Styles/Registration";
 
 import RegistrationForm from "./RegistrationForm";
 import Login from "./Login";
@@ -39,7 +39,7 @@ function Registration (props) {
 
                     <h2>Discover More</h2>
                 
-                    <RegistrationForm arr={["albania", "romania", "lithuania", "United States"]}/>
+                    <RegistrationForm arr={["albania", "romania", "a", "a", "lithuania", "a", "a", "United States"]}/>
                 
                 </RegistrationCard>
             </div>

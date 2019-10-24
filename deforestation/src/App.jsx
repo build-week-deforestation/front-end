@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
-import Registration from './components/registration';
-import UserPage from "./components/UserPage";
-import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
+import Registration from './Components/registration';
+import UserPage from "./Components/UserPage";
+import Login from "./Components/Login";
+import Dashboard from "./Components/Dashboard";
 import './App.css';
 
 // //body color: #e8ecf1,
