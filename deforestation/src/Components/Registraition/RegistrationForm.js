@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 // //body color: #e8ecf1,
 //  Primary color:  #03bd37,
@@ -88,9 +89,25 @@ const FormRows = styled.div`
 
 `;
 
-function handleSubmit(e) {}
-
 function RegistrationForm(props) {
+  //Axios Post request.
+  function handleSubmit(e) {
+    axios
+      .post(`https://jsonplaceholder.typicode.com/users`, { newUser })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
+  }
+
+  //set name and password of newUser
+  const [newUser, setValues] = useState({
+    username: "",
+    password: ""
+    // region: "",
+    // year: "",
+  });
+
   const [regionArry, setRegionArray] = useState(false);
   const [input, setInput] = useState("");
 
@@ -115,13 +132,23 @@ function RegistrationForm(props) {
           <label htmlFor="username">Username</label>
           <input id="username" type="text" name="username" />
           <label htmlFor="password">Password</label>
-          <input id="password" type="password" name="password" />
+          <input
+            id="password"
+            type="password"
+            name="password"
+            value={newUser.password}
+          />
         </FormRows>
         <FormRows>
           <label htmlFor="First-Name">First Name:</label>
           <input id="First-Name" type="text" name="First-Name" />
           <label htmlFor="Last-Name">Last Name:</label>
-          <input id="Last-Name" type="text" name="Last-Name" />
+          <input
+            id="Last-Name"
+            type="text"
+            name="Last-Name"
+            value={newUser.username}
+          />
         </FormRows>
         <FormRows>
           <label htmlFor="Date">Date of Interest:</label>

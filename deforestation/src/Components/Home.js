@@ -7,8 +7,9 @@ function Home() {
   return (
     <Wrapper>
       <h1>This is the Login Page!</h1>
-      <Registraition />
       <Login />
+      <Registraition />
+     
     </Wrapper>
   );
 }

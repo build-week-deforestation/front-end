@@ -38,7 +38,7 @@ function Login() {
             name="password"
             id="password"
           />
-          <button>Register</button>
+          <button>Log in</button>
         </FormWrapper>
     </Wrapper>
   );

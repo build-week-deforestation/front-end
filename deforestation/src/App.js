@@ -40,7 +40,15 @@ const reducer = (state, action) => {
 
 //App component
 function App() {
+  //App state
   const [state, dispatch] = React.useReducer(reducer, initialState);
+  // //Api call
+  // useEffect(async () => {
+  //   const result = await axios(
+  //     'https://hn.algolia.com/api/v1/search?query=redux',
+  //   );
+  //   setData(result.data);
+  // });
 
   return (
     <BrowserRouter>
