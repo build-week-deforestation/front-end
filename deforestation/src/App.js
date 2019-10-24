@@ -1,10 +1,11 @@
 import React from "react";
-import "./styles/App.css";
-import DataPage from "./components/DataPage";
-import Home from "./components/Home";
+
+import DataPage from "./Components/DataPage";
+import Home from "./Components/Home";
 import { BrowserRouter } from "react-router-dom";
-import { AppWrapper, Wrapper } from "./styles/style";
-import { AuthContext } from "./contexts/AuthContexts";
+import { AppWrapper, Wrapper } from "./Styles/style";
+import AuthContext from "./Contexts/AuthContexts"
+import Router from "./Components/Routes"
 
 //Setting up state for authentication
 const initialState = {
@@ -54,6 +55,7 @@ function App() {
             <div className="App">
               {!state.isAuthenticated ? <Home /> : <DataPage />}
             </div>
+            <Router/>
           </Wrapper>
         </AppWrapper>
       </AuthContext.Provider>

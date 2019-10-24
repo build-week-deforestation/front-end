@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ForestBackground from "../components/Images/ForestBackground.jpg";
+import ForestBackground from "../Components/Images/ForestBackground.jpg";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -46,3 +46,17 @@ export const FormWrapper = styled.form`
     margin: 1%;
   }
 `;
+
+
+//Web 1's wrapper
+// const Wrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: #e8ecf1;
+//   font-family: 'Roboto Mono', monospace;
+//  `;
+

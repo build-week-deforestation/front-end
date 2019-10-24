@@ -1,6 +1,5 @@
 import React from "react";
-import "../styles/App.css";
-import { Wrapper } from "../styles/style";
+import { Wrapper } from "../Styles/style";
 
 function DataPage() {
   return (

@@ -1,6 +1,5 @@
 import React from "react";
-import "../styles/App.css";
-import { Wrapper, FormWrapper } from "../styles/style";
+import { Wrapper, FormWrapper } from "../Styles/style";
 
 function Login() {
   //Creating a intial state object that handles the various states needed

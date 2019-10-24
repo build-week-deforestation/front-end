@@ -1,30 +1,28 @@
 import React from "react";
-import "../styles/App.css";
-import { Wrapper } from "../styles/style";
-import { Route, Switch, Redirect } from "./node_modules/react-router-dom";
-import Home from ".";
+import { Wrapper } from "../Styles/style"
+import { Route, Switch, Redirect } from "react-router-dom";
+import Home from "./Home";
 import LoginPage from "./Home";
-import Register from "./Register";
+import Registration from "./Registraition/registration";
 import UserDash from "./UserDash";
-import { AuthContext } from "../contexts/AuthContexts";
+import PrivateRoute from "./PrivateRoute";
 
 
 
 //Creating private routes HOC
-
-
-const PrivateRoute = ({ component: Component, ...rest }) => (
-    <Route {...rest} render={} />
-  )
 
 const Router = () => (
   <Wrapper>
     <Switch>
       <Redirect from="/" to="/home" />
       <Route path="/home" component={Home} />
-      <PrivateRoute path="/UserDash" component={UserDash} />
+     
+      <PrivateRoute
+          exact path="/UserDash"
+          component={UserDash}
+        />
       <Route path="/LoginPage" component={LoginPage} />
-      <Route path="/Register" component={Register} />
+      <Route path="/Registration" component={Registration} />
     </Switch>
   </Wrapper>
 );
