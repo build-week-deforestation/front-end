@@ -1,31 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { DashboardMain as DStyle } from "../Styled-Components/Dashboard";
 import TeamMate from "./TeamMate";
 import { Link } from "react-router-dom";
 
-const DashboardMain = styled.div`
-
-    width: 100%;
-    background-color: #f0f8ff;
-    height: 100%;
-
-    header {
-
-        background-color: #3d7c47;
-        padding-bottom: 5%;
-        display: flex;
-        justify-content: space-around;
-        align-items; center;
-
-        a {
-
-           margin-top: 5%;
-           text-decoration: none;
-           color: white;
-           padding: 4% 3%;
-        }
-    }
-`;
+const DashboardMain = styled.div`${DStyle};`;
 
 function Dashboard () {
 

@@ -1,10 +1,7 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import { Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
-const MainLogin = styled.div`
+import { css } from "styled-components";
 
 
-
+export const LoginStyles = css`
 
 input {
     box-sizing: border-box;
@@ -58,42 +55,4 @@ form {
             color: #3d7c47;
         }
     }
-}
-`;
-
-function Login () {
-
-    
-
-    const handleSubmit = () => {
-
-
-    }
-
-    
-
-    return(
-
-        
-            <MainLogin>
-
-                <form onSubmit={event => handleSubmit()}>
-                    <input id ="username" 
-                    type="text" 
-                    name="username"
-                    placeholder="username"
-                    /> 
-                        
-                    <input id ="password"  
-                    type="password" 
-                    name="password"
-                    placeholder="password"
-                    />
-                    <button type="submit">Login</button>
-                </form>
-            </MainLogin>
-        
-    );
-}
-
-export default Login;
+}`

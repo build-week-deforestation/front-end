@@ -2,149 +2,11 @@ import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
 import Axios from "axios";
 import { Link } from "react-router-dom";
+import { UserPageStyles } from '../Styled-Components/UserPage';
 
-const UserCard = styled.div`
+const UserCard = styled.div`${UserPageStyles}`;
 
-    width: 95%;
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    background: #f0f8ff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-
-    .profile-info {
-
-        
-
-        p {
-
-            text-align: left;
-            font-size: 75%;
-            margin-left: 7%;
-            margin-bottom: 2%;
-            color: #2c82c9;
-        }
-    }
-
-    .update {
-
-        p {
-           
-            font-size: 75%;
-            color: #2c82c9;
-        }
-
-        label {
-
-            font-size: 75%;
-            color: #2c82c9;
-            margin-bottom: 2%;
-        }
-
-        input {
-
-            max-width: 60%;
-            margin-bottom: 3%;
-            box-sizing: border-box;
-            min-width: 150px;
-            padding: 8px 10px 8px;
-            border: none;
-            border-radius: 4px;
-            box-shadow: none;
-            border-bottom: 1px solid #DDD;
-            border: 1px solid #ccc;
-            font-size: 120%;
-            outline: none;
-            cursor: text;
-        }
-
-           
-        button {
-
-            margin-bottom: 2%;
-            background-color: #3d7c47;
-            border: none;
-            padding: 6% 9%;
-            color: #f0f8ff;
-            border-radius: 2px;
-            display: block;
-
-            &:hover {
-              
-                background-color: #f0f8ff;
-                color: #3d7c47;
-            }
-        }
-
-        form {
-
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-
-            ul {
-
-        
-                background-color: white;
-                margin-top -3%;
-                min-width: 143px;
-                padding: 0;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-                
-        
-                li {
-        
-                    border: 1px solid lightgrey;
-                    list-style-type: none;
-                    min-width: 100%;
-                    text-align: left;
-                    color: black;
-                    padding: 1% 0 1% 4%;
-        
-                }
-            }
-        }
-    }
-
-    .cloropleth-div {
-
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-
-        h2 {
-
-            margin-top: 0;
-        }
-        
-        img {
-
-            max-width: 70%;
-            margin-bottom: 2%;
-        }
-
-        a {
-
-            text-decoration: none;
-            margin-bottom: 3%;
-        }
-    }
-`;
-
-const Heading = styled.header`
-
-    background-color: #3d7c47;
-    width: 100%;
-
-    h1 {
-
-        font-size: 115%;
-        color: white;
-    }
-
-`;
-
-
+ 
 function UserPage (props) {
 
     const [userObj, setUserObj] = useState({firstName: "Aaron",
@@ -158,7 +20,7 @@ function UserPage (props) {
     "romania", "lithuania", "United States"];
 
     useEffect(() => {
-        const fetchUserDate = () =>
+        const fetchUserData = () =>
         {
             Axios.get("bleh").then(
                 response =>{
@@ -172,7 +34,7 @@ function UserPage (props) {
             })
         }
 
-        fetchUserDate();
+        fetchUserData();
     }, []);
 
     function handleChange (e) {
@@ -195,9 +57,9 @@ function UserPage (props) {
     return (
         
         <UserCard>
-            <Heading>
+            <header>
                 <h1>{`Welcome Back ${userObj.firstName}!`}</h1>
-            </Heading>
+            </header>
             <div className="profile-info">
                 <h2>Profile Information</h2>
                 <p><b>{`Full Name:`}</b> {`${userObj.firstName} ${userObj.lastName}`}</p>

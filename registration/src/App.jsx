@@ -17,13 +17,13 @@ import './App.css';
  const Wrapper = styled.div`
 
   font-family: 'Roboto Mono', monospace;
+  
  `;
 
 
 
 function App() {
   return (
-    <div className="App">
       <Wrapper>
 
         <Route exact path="/" component={Registration}></Route>
@@ -31,8 +31,7 @@ function App() {
         <Route path="/login" component={Login}></Route>
         <Route path="/dashboard" component={Dashboard}></Route>
       </Wrapper>
-      
-    </div>
+    
   );
 }
 
