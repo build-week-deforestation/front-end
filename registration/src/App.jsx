@@ -2,6 +2,9 @@ import React from 'react';
 import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
 import Registration from './components/registration';
+import UserPage from "./components/UserPage";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
 import './App.css';
 
 // //body color: #e8ecf1,
@@ -12,27 +15,23 @@ import './App.css';
 
 
  const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #e8ecf1;
+
   font-family: 'Roboto Mono', monospace;
+  
  `;
 
 
 
 function App() {
   return (
-    <div className="App">
       <Wrapper>
 
         <Route exact path="/" component={Registration}></Route>
+        <Route path="/user-page" component={UserPage}></Route>
+        <Route path="/login" component={Login}></Route>
+        <Route path="/dashboard" component={Dashboard}></Route>
       </Wrapper>
-      
-    </div>
+    
   );
 }
 
