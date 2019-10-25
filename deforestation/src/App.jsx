@@ -23,8 +23,16 @@ const initialState = {
 };
 
 const Wrapper = styled.div`
-  font-family: "Roboto Mono", monospace;
+
+  font-family: 'Roboto Mono', monospace;
   background-color: #22313f;
+  width: 100vw
+  height: 100vh;
+  background-image: url(${background});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
 `;
 
 function App() {
@@ -54,12 +62,11 @@ function App() {
             dispatch
           }}
         >
-          {!initialState.isAuthenticated ? (
-            <Route path="/" component={Registration}></Route>
-          ) : (
-            <Route path="/" component={Dashboard}></Route>
-          )}
-
+          <Route
+            exact
+            path="/"
+            component={!initialState.isAuthenticated ? Registration : Dashboard}
+          ></Route>
           <Route path="/user-page" component={UserPage}></Route>
           <Route path="/dashboard" component={Dashboard}></Route>
         </AuthContext.Provider>
