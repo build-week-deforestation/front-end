@@ -58,7 +58,7 @@ const Wrapper = styled.div`
   background-image: url(${background});
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   
 `;
 

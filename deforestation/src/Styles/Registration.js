@@ -44,6 +44,8 @@ export const RegistrationStylesCard =`
     background-color: #f0f8ff;
     color: #2c82c9;
     padding: 1.5%;
+    margin-top: 5%;
+    border-radius: 6px;
     margin-bottom: 5%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
