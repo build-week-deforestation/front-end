@@ -6,6 +6,7 @@ import Registration from "./Components/registration";
 import UserPage from "./Components/UserPage";
 import Dashboard from "./Components/Dashboard";
 import { BrowserRouter as Router } from "react-router-dom";
+import background from "./Components/Images/backgrnd.svg"
 // import Routes from "./Components/Routes"
 
 // //body color: #e8ecf1,
@@ -26,8 +27,7 @@ const Wrapper = styled.div`
 
   font-family: 'Roboto Mono', monospace;
   background-color: #22313f;
-  width: 100vw
-  height: 100vh;
+  
   background-image: url(${background});
   background-repeat: no-repeat;
   background-size: cover;
