@@ -3,15 +3,11 @@ import styled from "styled-components";
 import { DashboardMain as DStyle } from "../Styles/Dashboard";
 import TeamMate from "./TeamMate";
 import { Link } from "react-router-dom";
+import { TEAM } from "./Team";
 
 const DashboardMain = styled.div`${DStyle};`;
 
 function Dashboard () {
-
-    const [team, setTeam] = useState([{name: "Aaron Merrifield",
-                                      role: "Front-End React",
-                                    description: "i did stuff i did stuffi did stuffi did stuffi did stuffi i did stuffi did stuff",
-                                     img: "Aaron", }]);
                                     
 
     return (
@@ -27,7 +23,7 @@ function Dashboard () {
             </div>
             <div className="about-div">
                 <h2>About Us</h2>
-                {team.map(teammate => (
+                {TEAM.map(teammate => (
                     <TeamMate member={teammate}/>
                 ))}
             </div>

@@ -27,8 +27,7 @@ const Wrapper = styled.div`
   font-family: 'Roboto Mono', monospace;
   background-color: #22313f;
   width: 100vw
-  height: 100vh;
-  background-image: url(${background});
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
