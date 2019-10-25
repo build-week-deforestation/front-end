@@ -3,16 +3,14 @@ import styled from "styled-components";
 // import {axiosWithAuth} from 'axios';
 import { LoginStyles } from "../Styles/Login";
 import { AuthContext } from "./Context";
-
+import {withRouter} from "react-router-dom"
 
 const MainLogin = styled.div`
   ${LoginStyles}
 `;
 
-
-
-function Login() {
-    const { state } = useContext(AuthContext);
+function Login(props) {
+  const { dispatch } = useContext(AuthContext);
 
   //If backend was ready I would use something like this to deal with authentication.
   //    const handleSubmit = () => {
@@ -27,10 +25,12 @@ function Login() {
   //       })
   //       .catch(err => console.log(err));
   //    }
-  
-  function toggleIsAuthenticated() {
-    
-    };
+
+  function toggleIsAuthenticated(event) {
+    event.preventDefault();
+    dispatch({ type:"LOGIN"})
+    props.history.push("/user-page")
+  }
 
   return (
     <MainLogin>
@@ -52,4 +52,5 @@ function Login() {
     </MainLogin>
   );
 }
-export default Login;
+
+export default withRouter(Login) ;

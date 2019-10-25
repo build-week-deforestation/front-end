@@ -33,9 +33,9 @@ const Wrapper = styled.div`
   background-position: center;
   
 `;
-
+// background-image: url(${background});
 function App() {
-  const [state, dispatch] = useReducer((initialState, action) => {
+  const [state, dispatch] = useReducer((state, action) => {
     switch (action.type) {
       case "LOGIN":
         return {
@@ -51,7 +51,7 @@ function App() {
       default:
         return state;
     }
-  });
+  }, initialState);
   return (
     <Router>
       <Wrapper>
@@ -64,7 +64,7 @@ function App() {
           <Route
             exact
             path="/"
-            component={!initialState.isAuthenticated ? Registration : Dashboard}
+            component={Registration}
           ></Route>
           <Route path="/user-page" component={UserPage}></Route>
           <Route path="/dashboard" component={Dashboard}></Route>
