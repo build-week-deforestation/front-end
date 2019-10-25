@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { Route, Link } from "react-router-dom";
 import styled from "styled-components";
-import Registration from './components/registration';
-import UserPage from "./components/UserPage";
-import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
-import './App.css';
+import Registration from './Components/registration';
+import UserPage from "./Components/UserPage";
+import Dashboard from "./Components/Dashboard";
+
+
 
 // //body color: #e8ecf1,
 //  Primary color:  #03bd37,
@@ -14,22 +14,64 @@ import './App.css';
 //   Accent 3: #2c82c9
 
 
- const Wrapper = styled.div`
+//Setting up state for authentication
 
-  font-family: 'Roboto Mono', monospace;
-  
- `;
+const AuthContext = createContext();
+
+const state = {
+  isAuthenticated: false,
+  user: null,
+  token: null
+};
+
+//Reducer pattern for rendering based on whether the user is logged in using a switch method.
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "LOGIN":
+      localStorage.setItem("user", JSON.stringify(action.payload.user));
+      localStorage.setItem("token", JSON.stringify(action.payload.token));
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: action.payload.user,
+        token: action.payload.token
+      };
+    case "LOGOUT":
+      localStorage.clear();
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: null
+      };
+    default:
+      return state;
+  }
+};
+
+const Wrapper = styled.div`
+
+font-family: 'Roboto Mono', monospace;
+background-color: #22313f;
+
+`;
 
 
 
 function App() {
   return (
       <Wrapper>
+        <AuthContext.Provider
+          value={{
+            state
 
-        <Route exact path="/" component={Registration}></Route>
+          }}
+        >
+          {!state.isAuthenticated ?   <Route path="/" component={Registration}></Route> : <Route path="/" component={Dashboard}></Route>}
+
         <Route path="/user-page" component={UserPage}></Route>
-        <Route path="/login" component={Login}></Route>
         <Route path="/dashboard" component={Dashboard}></Route>
+
+        </AuthContext.Provider>
       </Wrapper>
     
   );

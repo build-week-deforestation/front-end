@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from "styled-components";
 import Axios from "axios";
 import { Link } from "react-router-dom";
-import { UserPageStyles } from '../Styled-Components/UserPage';
+import { UserPageStyles } from '../Styles/UserPage';
 
 const UserCard = styled.div`${UserPageStyles}`;
 

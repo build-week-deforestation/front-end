@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { RegistrationStylesMain, RegistrationStylesCard } from "../Styled-Components/Registration";
+import { RegistrationStylesMain, RegistrationStylesCard } from "../Styles/Registration";
 
 import RegistrationForm from "./RegistrationForm";
-import Login from "./Login";
+
 
 // //body color: #e8ecf1,
 //  Primary color:  #03bd37,
@@ -25,9 +25,6 @@ function Registration (props) {
         
         <RegistrationContainer className="RegCont">
 
-            <header>
-            
-            </header>
 
 
             <div className="main-content-div">

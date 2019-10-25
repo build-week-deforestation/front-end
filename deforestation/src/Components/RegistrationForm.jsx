@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Axios from "axios";
 import { Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
-import Login from "./Login";
-import { FormDivStyles, FormRowStyles, LinkTextStyles} from "../Styled-Components/RegistrationForm";
+
+import { FormDivStyles, FormRowStyles, LinkTextStyles} from "../Styles/RegistrationForm";
 
 
 // //body color: #e8ecf1,
@@ -81,7 +81,7 @@ function RegistrationForm (props) {
             <Modal isOpen={modal} onClick={toggle}>
                 <ModalHeader toggle={toggle}>Enter Login Info</ModalHeader>
                 <ModalBody>
-                    <Login />
+                    
                 </ModalBody> 
                 <ModalFooter></ModalFooter>
             </Modal>

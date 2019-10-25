@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { TeamMateStyles } from "../Styled-Components/TeamMate"
+import { TeamMateStyles } from "../Styles/TeamMate"
 import Aaron from "./Images/aaron.jpg"
 
 

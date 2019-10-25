@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { DashboardMain as DStyle } from "../Styled-Components/Dashboard";
+import { DashboardMain as DStyle } from "../Styles/Dashboard";
 import TeamMate from "./TeamMate";
 import { Link } from "react-router-dom";
 
