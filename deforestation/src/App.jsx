@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Registration from './Components/registration';
 import UserPage from "./Components/UserPage";
 import Dashboard from "./Components/Dashboard";
+import background from "./Components/Images/backgrnd.svg"
 
 
 
@@ -50,9 +51,15 @@ const reducer = (state, action) => {
 
 const Wrapper = styled.div`
 
-font-family: 'Roboto Mono', monospace;
-background-color: #22313f;
-
+  font-family: 'Roboto Mono', monospace;
+  background-color: #22313f;
+  width: 100vw
+  height: 100vh;
+  background-image: url(${background});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
 `;
 
 
@@ -66,8 +73,10 @@ function App() {
 
           }}
         >
-          {!state.isAuthenticated ?   <Route path="/" component={Registration}></Route> : <Route path="/" component={Dashboard}></Route>}
 
+        
+
+        <Route exact path="/" component={!state.isAuthenticated ?  Registration : Dashboard}></Route>
         <Route path="/user-page" component={UserPage}></Route>
         <Route path="/dashboard" component={Dashboard}></Route>
 
