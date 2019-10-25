@@ -6,6 +6,7 @@ import Registration from "./Components/registration";
 import UserPage from "./Components/UserPage";
 import Dashboard from "./Components/Dashboard";
 import { BrowserRouter as Router } from "react-router-dom";
+import background from "./Components/Images/backgrnd.svg"
 // import Routes from "./Components/Routes"
 
 // //body color: #e8ecf1,
@@ -26,11 +27,12 @@ const Wrapper = styled.div`
 
   font-family: 'Roboto Mono', monospace;
   background-color: #22313f;
+  background-image: url(${background});
   width: 100vw
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   
 `;
 // background-image: url(${background});
