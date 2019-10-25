@@ -27,16 +27,17 @@ const Wrapper = styled.div`
 
   font-family: 'Roboto Mono', monospace;
   background-color: #22313f;
-  
   background-image: url(${background});
+  width: 100vw
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
   
 `;
-
+// background-image: url(${background});
 function App() {
-  const [state, dispatch] = useReducer((initialState, action) => {
+  const [state, dispatch] = useReducer((state, action) => {
     switch (action.type) {
       case "LOGIN":
         return {
@@ -52,7 +53,7 @@ function App() {
       default:
         return state;
     }
-  });
+  }, initialState);
   return (
     <Router>
       <Wrapper>
@@ -65,7 +66,7 @@ function App() {
           <Route
             exact
             path="/"
-            component={!initialState.isAuthenticated ? Registration : Dashboard}
+            component={Registration}
           ></Route>
           <Route path="/user-page" component={UserPage}></Route>
           <Route path="/dashboard" component={Dashboard}></Route>

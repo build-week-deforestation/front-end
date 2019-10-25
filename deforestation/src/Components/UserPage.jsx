@@ -42,9 +42,14 @@ function UserPage (props) {
         setInput(e.target.value);
         //setDisplayState("block");
 
-        let filterArr = tempArr.filter(place => {
-            return place.includes(e.target.value);
-          }); 
+        let filterArr = props.arr;
+        
+        for (let i = 0; i < e.target.value.length; i++) {
+           
+            filterArr = filterArr.filter(place => {
+                return place.charAt(i).toLowerCase().includes(e.target.value.charAt(i).toLowerCase());
+            }); 
+        }
       
           if(e.target.value === ""){
               setRegionArray(false);

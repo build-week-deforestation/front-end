@@ -55,20 +55,20 @@ function RegistrationForm(props) {
   
     const toggle = () => {
       setModal(!modal);
-      if (modal) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "auto";
-      }
     };
   
     function handleChange(e) {
       setInput(e.target.value);
       //setDisplayState("block");
   
-      let filterArr = props.arr.filter(place => {
-        return place.includes(e.target.value);
-      });
+      let filterArr = props.arr;
+        
+        for (let i = 0; i < e.target.value.length; i++) {
+           
+            filterArr = filterArr.filter(place => {
+                return place.charAt(i).toLowerCase().includes(e.target.value.charAt(i).toLowerCase());
+            }); 
+        }
   
       if (e.target.value === "") {
         setRegionArray(false);
@@ -80,7 +80,7 @@ function RegistrationForm(props) {
     return (
       <section>
         <div class="modal">
-          <Modal isOpen={modal} onClick={toggle}>
+          <Modal isOpen={modal}>
             <ModalHeader toggle={toggle}>Enter Login Info</ModalHeader>
             <ModalBody>
               <Login />
