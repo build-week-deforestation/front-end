@@ -84,6 +84,7 @@ function App() {
           <Route path="/dashboard" component={Dashboard}></Route>
         </AuthContext.Provider>
       </Wrapper>
+      
      
     </Router>
   );
