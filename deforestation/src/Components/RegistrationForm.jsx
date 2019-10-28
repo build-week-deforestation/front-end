@@ -81,7 +81,7 @@ function RegistrationForm(props) {
       <section>
         <div class="modal">
           <Modal isOpen={modal}>
-            <ModalHeader toggle={toggle}>Enter Login Info</ModalHeader>
+          <ModalHeader toggle={toggle}>Enter Login Info</ModalHeader>
             <ModalBody>
               <Login />
             </ModalBody>

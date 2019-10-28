@@ -26,7 +26,7 @@ form {
     background: #f0f8ff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     padding: 5% 0;
-    border-radius: 6px;
+    border-radius: 2px;
     
     
     h2 {
@@ -40,18 +40,17 @@ form {
     button {
 
         margin-top: 5%;
-        background-color: #3d7c47;
+        background-image: linear-gradient(-45deg, #03bd37, #305063);
         border: none;
-        padding: 6% 9%;
+        padding: 3% 6.5%;
         color: #f0f8ff;
         border-radius: 2px;
         display: block;
         align-self: center;
 
         &:hover {
-          
-            background-color: #f0f8ff;
-            color: #3d7c47;
+            background-image: linear-gradient(45deg, #03bd37, #305063);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         }
     }
 }`
