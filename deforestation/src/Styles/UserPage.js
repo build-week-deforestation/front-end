@@ -157,6 +157,24 @@ export const UserPageStyles = css`
             
                 padding: 1.5% 2.25%;
             }
+
+            form {
+            
+                ul {
+    
+                    max-width: 400px;
+    
+                    li {
+                        
+                        max-width: 350px;
+
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+            }
         }
+
+       
     }
     `
