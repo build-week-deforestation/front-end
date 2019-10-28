@@ -1,4 +1,8 @@
-[[redirects]]
+[build]
+  command = "yarn build"
+  publish = "deforestation/build"
+
+  [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
