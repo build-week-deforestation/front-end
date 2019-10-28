@@ -55,18 +55,20 @@ export const FormDivStyles = css`
         button {
 
             margin-top: 5%;
-            background-color: #3d7c47;
+            background-image: linear-gradient(-45deg, #305063, #03bd37);
+            background-position: 100%;
             width: 50%;
             border: none;
             padding: 6% 9%;
             color: #f0f8ff;
-            border-radius: 2px;
+            border-radius: 6px;
             display: block;
             margin-bottom: 2%;
+            transition: background-position .8s ease, color .3s, box-shadow .5s;
             &:hover {
               
-                background-color: #f0f8ff;
-                color: #3d7c47;
+                background-position: 0%;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             }
         }
     }`
@@ -142,7 +144,8 @@ export const FormDivStyles = css`
             
             background-color: white;
             margin-top -.3%;
-            ;
+            overflow-y: scroll;
+            max-height: 150px;
             min-width: 90%;
             padding: 0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -156,8 +159,9 @@ export const FormDivStyles = css`
                 max-width: 100%;
                 text-align: left;
                 color: black;
-                padding: 1% 0 1% 4%;
+                padding: 5% 0 5% 4%;
                 text-align: center;
+                font-size: 50%;
 
                 a {
 

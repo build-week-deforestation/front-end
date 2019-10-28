@@ -20,7 +20,7 @@
 }
 
 .modal-content {
-
+  animation: fade 2s;
   min-width: 100%;
   min-height: 100vh;
   bottom: 0%;
@@ -29,30 +29,34 @@
 }
 
 .modal-header {
-
   display: flex;
   justify-content: space-between;
-  background: green;
   padding-top: 2%;
-  background-color: #3d7c47;
+  background-image: linear-gradient(-45deg, #03bd37, #305063);
   margin: 50% auto 0 auto;;
   max-width: 66%;
+  border-radius: 2px;
 }
 
 .modal-body {
-
+  animation: fade 2s;
   max-width: 66%;
-  margin: 0 auto
+  margin: 0 auto;
+  margin-bottom: 10rem;
 }
 
 .modal-header h5 {
-
+  animation: fade 2s;
   margin: 0 0 0 2%;
   color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1em;
+  letter-spacing: 1.2px;
 }
 
-.modal-header button {
 
+.modal-header button {
   margin-right: 2%;
   margin-bottom: 2%;
   background: none;
@@ -60,4 +64,17 @@
   color: white;
   font-size: 100%;
   
+}
+
+
+
+@keyframes fade {
+  0% {
+      opacity:.1;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity:1;
+      transform: translateY(0px);
+  }
 }

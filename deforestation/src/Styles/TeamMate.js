@@ -11,6 +11,7 @@ export const TeamMateStyles = css`
     display: flex;
     flex-flow: column; 
     align-items: center;
+    border: 4px dashed white;
 
     img {
 
@@ -55,4 +56,25 @@ export const TeamMateStyles = css`
             border-top: 4px solid black;
             
         }
-    }`
+    }
+    
+    @media (min-width: 768px) {
+
+        flex-flow: row;
+        max-width: 70%;
+
+        img {
+
+            max-height: 14vw;
+            max-width: 14vw;
+            min-height: 14vw;
+            min-width: 14vw;
+            margin-left: 4%;
+        }
+
+        .text-div {
+
+            margin: 6% 4%;
+        }
+    }
+    `
