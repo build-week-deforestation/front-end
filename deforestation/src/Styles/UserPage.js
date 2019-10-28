@@ -36,7 +36,7 @@ export const UserPageStyles = css`
 
             text-align: center;
             font-size: 75%;
-            margin-left: 7%;
+            margin: 0 auto;
             margin-bottom: 2%;
             color: #2c82c9;
         }
