@@ -48,11 +48,9 @@ export const DashboardMain = css`
 
         width: 95%;
         max-width: 80%;
-        background: rgba(242, 212, 92, .7);
         margin: 0 auto;
         padding: 3%;
         margin-top 3%;
-        border: 20px dashed sienna;
     }
 
     @media (min-width: 768px) {

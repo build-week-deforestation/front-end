@@ -3,15 +3,13 @@ import { css } from "styled-components";
 export const TeamMateStyles = css`
 
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    background: #3d7c47;
-    filter: brightness(130%);
+    background-image: linear-gradient(45deg, #03bd37, #305063);
     width: 80%;
     margin: 0 auto 5% auto;
     padding: 3% 0;
     display: flex;
     flex-flow: column; 
     align-items: center;
-    border: 4px dashed white;
 
     img {
 
@@ -27,7 +25,7 @@ export const TeamMateStyles = css`
         display: flex
         flex-flow: column;
         align-items: center;
-        border: 4px solid black;
+        border: 1px solid black;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         background: white;
         filter: brightness(75%);
