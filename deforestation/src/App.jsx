@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Registration from "./Components/registration";
 import UserPage from "./Components/UserPage";
 import Dashboard from "./Components/Dashboard";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import background from "./Components/Images/backgrnd.svg";
 
 
