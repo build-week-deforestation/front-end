@@ -56,6 +56,7 @@ export const FormDivStyles = css`
 
             margin-top: 5%;
             background-image: linear-gradient(-45deg, #305063, #03bd37);
+            background-position: 100%;
             width: 50%;
             border: none;
             padding: 6% 9%;
@@ -63,11 +64,10 @@ export const FormDivStyles = css`
             border-radius: 6px;
             display: block;
             margin-bottom: 2%;
-            transition: background-image .5s ease, color .3s, box-shadow .5s;
+            transition: background-position .8s ease, color .3s, box-shadow .5s;
             &:hover {
               
-                background-image: linear-gradient(45deg, #03bd37, #305063);
-                color: #03bd37;
+                background-position: 0%;
                 box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             }
         }
