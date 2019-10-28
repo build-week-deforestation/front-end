@@ -61,7 +61,7 @@ function RegistrationForm(props) {
       setInput(e.target.value);
       //setDisplayState("block");
   
-      let filterArr = props.arr;
+      let filterArr = props.countries;
         
         for (let i = 0; i < e.target.value.length; i++) {
            
@@ -91,35 +91,31 @@ function RegistrationForm(props) {
         <FormDiv>
           <form onSubmit={event => handleSubmit()}>
             <FormRows>
-              <label htmlFor="username">Username</label>
-              <input id="username" type="text" name="username" />
-              <label htmlFor="password">Password</label>
+              
+              <input 
+              id="username" 
+              type="text" 
+              name="username"
+              placeholder= "username"
+               />
+             
               <input
                 id="password"
                 type="password"
                 name="password"
-                value={newUser.password}
+                
+                placeholder ="password"
               />
             </FormRows>
             <FormRows>
-              <label htmlFor="First-Name">First Name:</label>
-              <input id="First-Name" type="text" name="First-Name" />
-              <label htmlFor="Last-Name">Last Name:</label>
-              <input
-                id="Last-Name"
-                type="text"
-                name="Last-Name"
-                value={newUser.username}
+              
+              <input 
+              id="First-Name" 
+              type="text" 
+              name="First-Name" 
+              placeholder="First Name"
               />
-            </FormRows>
-            <FormRows>
-              <input
-                id="First-Name"
-                type="text"
-                name="First-Name"
-                placeholder="First Name"
-              />
-  
+              
               <input
                 id="Last-Name"
                 type="text"

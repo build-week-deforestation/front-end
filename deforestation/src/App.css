@@ -20,7 +20,7 @@
 }
 
 .modal-content {
-
+  animation: fade 2.2s;
   min-width: 100%;
   min-height: 100vh;
   bottom: 0%;
@@ -29,7 +29,6 @@
 }
 
 .modal-header {
-
   display: flex;
   justify-content: space-between;
   background: green;
@@ -37,19 +36,25 @@
   background-color: #3d7c47;
   margin: 50% auto 0 auto;;
   max-width: 66%;
+  border-radius: 6px;
 }
 
 .modal-body {
-
+  border-radius: 6px;
+  animation: fade 2.2s;
   max-width: 66%;
-  margin: 0 auto
+  margin: 0 auto;
+  border-radius: 6px;
 }
 
 .modal-header h5 {
-
+  border-radius: 6px;
+  animation: fade 2.2s;
   margin: 0 0 0 2%;
   color: white;
+  
 }
+
 
 .modal-header button {
 
@@ -60,4 +65,15 @@
   color: white;
   font-size: 100%;
   
+}
+
+@keyframes fade {
+  0% {
+      opacity:.1;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity:1;
+      transform: translateY(0px);
+  }
 }

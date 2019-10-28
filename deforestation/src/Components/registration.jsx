@@ -5,7 +5,7 @@ import {
   RegistrationStylesMain,
   RegistrationStylesCard
 } from "../Styles/Registration";
-
+import { COUNTRIES } from "./Countries";
 import RegistrationForm from "./RegistrationForm";
 
 // //body color: #e8ecf1,
@@ -31,7 +31,7 @@ function Registration(props) {
           <h2>Discover More</h2>
 
           <RegistrationForm
-            arr={["albania", "romania", "lithuania", "United States"]}
+            countries={COUNTRIES}
           />
         </RegistrationCard>
       </div>

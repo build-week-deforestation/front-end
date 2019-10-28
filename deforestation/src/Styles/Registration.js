@@ -42,11 +42,12 @@ export const RegistrationStylesCard =`
     justify-content: flex-start;
     align-items: center;
     background-color: #f0f8ff;
-    color: #2c82c9;
+    color: #22313f
     padding: 1.5%;
     margin-top: 5%;
     border-radius: 6px;
     margin-bottom: 5%;
+    animation: fadein 2.2s;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
     h2 {
@@ -55,7 +56,7 @@ export const RegistrationStylesCard =`
         font-size: 1.6em;
         letter-spacing: 1.5px;
         text-transform: uppercase;
-        color: #000000;
+        color: #22313f;
     }
 
     @media (min-width: 768px) {

@@ -6,7 +6,9 @@ import Registration from "./Components/registration";
 import UserPage from "./Components/UserPage";
 import Dashboard from "./Components/Dashboard";
 import { BrowserRouter as Router } from "react-router-dom";
-import background from "./Components/Images/backgrnd.svg"
+import background from "./Components/Images/backgrnd.svg";
+
+
 // import Routes from "./Components/Routes"
 
 // //body color: #e8ecf1,
@@ -29,10 +31,20 @@ const Wrapper = styled.div`
   background-color: #22313f;
   background-image: url(${background});
   width: 100vw
-  height: 100%;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
+  animation: fadein 2.2s;
+
+@keyframes fadein {
+  from {
+      opacity:.1;
+  }
+  to {
+      opacity:1;
+  }
+
   
 `;
 // background-image: url(${background});
@@ -72,6 +84,7 @@ function App() {
           <Route path="/dashboard" component={Dashboard}></Route>
         </AuthContext.Provider>
       </Wrapper>
+     
     </Router>
   );
 }
