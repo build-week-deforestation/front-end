@@ -23,6 +23,7 @@ export const UserPageStyles = css`
 
             font-size: 115%;
             color: white;
+            text-align: center;
         }
     }
 
@@ -33,7 +34,7 @@ export const UserPageStyles = css`
 
         p {
 
-            text-align: left;
+            text-align: center;
             font-size: 75%;
             margin-left: 7%;
             margin-bottom: 2%;
@@ -101,8 +102,9 @@ export const UserPageStyles = css`
 
         
                 background-color: white;
-                margin-top -3%;
-                min-width: 143px;
+                margin-top -3.2%;
+                max-width: 59%;
+                min-width: 59%;
                 padding: 0;
                 box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
                 
@@ -110,11 +112,12 @@ export const UserPageStyles = css`
                 li {
         
                     border: 1px solid lightgrey;
+                    text-align: center;
                     list-style-type: none;
-                    min-width: 100%;
-                    text-align: left;
+                    max-width: 100%;
                     color: black;
-                    padding: 1% 0 1% 4%;
+                    padding: 5% 0 5% 4%;
+                    font-size: 50%;
         
                 }
             }
@@ -143,4 +146,17 @@ export const UserPageStyles = css`
             text-decoration: none;
             margin-bottom: 3%;
         }
-    }`
+    }
+    
+    
+    @media (min-width: 768px) {
+
+       .update{
+            
+            button {
+            
+                padding: 1.5% 2.25%;
+            }
+        }
+    }
+    `
