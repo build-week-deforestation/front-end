@@ -24,6 +24,7 @@ function Dashboard () {
                 <Iframe url="//plot.ly/~NaceyA/1.embed"
                 width="85%"
                 height="90%"
+                style="background: #FFFFFF;"
                 id="cloropleth"
                 className="map"
                 display="initial"

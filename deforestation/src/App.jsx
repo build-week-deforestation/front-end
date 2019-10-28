@@ -31,7 +31,6 @@ const Wrapper = styled.div`
   background-color: #22313f;
   background-image: url(${background});
   width: 100vw
-  
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
