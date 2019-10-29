@@ -5,6 +5,7 @@ export const DashboardMain = css`
     width: 100%;
     background-color: #22313f;
     height: 100%;
+    
 
     header {
         color: #22313f;

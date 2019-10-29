@@ -20,7 +20,7 @@
 }
 
 .modal-content {
-  animation: fade 2s;
+  animation: fade 1.5s;
   min-width: 100%;
   min-height: 100vh;
   bottom: 0%;
@@ -39,14 +39,14 @@
 }
 
 .modal-body {
-  animation: fade 2s;
+  animation: fade 1.5s;
   max-width: 66%;
   margin: 0 auto;
   margin-bottom: 10rem;
 }
 
 .modal-header h5 {
-  animation: fade 2s;
+  animation: fade 1.5s;
   margin: 0 0 0 2%;
   color: white;
   text-transform: uppercase;

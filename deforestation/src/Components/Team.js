@@ -30,7 +30,8 @@ export const TEAM = [{
 {
     name: "Barbaro",
     role: "Front-End React",
-    description: "Designed and implemented about page for Marketing Page implementation",
+    description: ("Designed and implemented mock Marketing" +
+    "Page using responsive CSS(LESS)/HTML and proper aesthetic techniques to ensure both an efficient and enjoyable user experience"),
     img: "Barbaro" ,
 }, 
 {

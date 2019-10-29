@@ -6,23 +6,30 @@ export const UserPageStyles = css`
     height: 100%;
     display: flex;
     flex-flow: column;
-    background: #f0f8ff;
+    background-color: #22313f;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    
 
     h2 {
-
+        color: #f0f8ff;
+        font-size: 1.5rem;
+        letter-spacing: 1.2px;
+        font-weight: 300;
         text-align: center;
     }
 
     header {
-
-        background-color: #3d7c47;
-        width: 100%;
+        color: #22313f;
+        font-weight: 300;
+        background-image: linear-gradient(-45deg, #03bd37, #305063);
+        display: flex;
+        justify-content: space-around;
+        align-items; center;
 
         h1 {
-
-            font-size: 115%;
-            color: white;
+            color: #f0f8ff;
+            font-size: 2rem;
+            font-weight: 300;
             text-align: center;
         }
     }

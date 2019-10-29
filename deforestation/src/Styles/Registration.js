@@ -49,6 +49,7 @@ export const RegistrationStylesCard =`
     margin-bottom: 5%;
     animation: fadein 2.2s;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    animation: fade 1.5s;
 
     h2 {
 
